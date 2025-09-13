@@ -1,14 +1,14 @@
 const express = require('express');
-const { connection } = require('./DataBase/db'); // destructure (kyunki tum export object kar rahe ho)
-
+const { connection } = require('./DataBase/db'); 
+const userRouter = require("./userRoutes");
+const cors = require("cors");
 const app = express();
-
-// Default route
+app.use(express.json());
+app.use(cors());
 app.get('/', (req, res) => {
   res.send("Hello, MongoDB connected project!");
 });
-
-// Server
+app.use("/api/users", userRouter);
 app.listen(3000, async () => {
   console.log("🚀 Server running on http://localhost:3000");
 
