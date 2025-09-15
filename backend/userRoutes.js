@@ -3,11 +3,15 @@ const User = require("./user");
 const router = express.Router();
 router.post("/", async (req, res) => {
   try {
+    let users = await User.findOne({phone:req.body.phone});
+    if (user){
+      return res.status(400).json({msg:"User allready exit" ,status:true,otp:"789456"});
+    }
     let user = new User(req.body);  // request se data lena
     await user.save();              // database me save karna
-    res.send(user);                 // response bhejna
+    res.status(201).json({msg:"Sucessfully save the data",status:true,otp:"12345"});                 // response bhejna
   } catch (err) {
-    res.send({ error: err.message });
+    res.status(500).json({ msg: err.message,status:false });
   }
 });
 router.get("/", async (req, res) => {

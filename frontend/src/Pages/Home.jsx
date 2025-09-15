@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "../Components/Navbar.jsx";
+import Navbar from "../Components/common/Navbar/Navbar.jsx";
 import Categories from "../Components/Categories.jsx";
  function HomePage() {
   return (

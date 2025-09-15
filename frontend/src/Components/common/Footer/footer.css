@@ -1,0 +1,42 @@
+/* Footer general */
+.site-footer { font-size: 14px; color: #444; }
+
+/* link styles */
+.site-footer .footer-links a {
+  color: #6c757d;
+  text-decoration: none;
+}
+.site-footer .footer-links a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+/* app store buttons */
+.app-btn {
+  min-width: 120px;
+}
+
+/* social round icons */
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #222;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+.social-btn:hover {
+  opacity: 0.9;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* spacing fix if you have a fixed navbar:
+   increase the body's top padding equal to navbar height */
+@media (min-width: 992px) {
+  body { padding-top: 70px; } /* change 70px to your navbar height */
+}
